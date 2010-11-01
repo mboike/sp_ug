@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Podaj nazwe uzytkownika"
+read uzytkownik
+#echo "Sprawdzanie czy $uzytkownik jest online"
+
+licz=`who | grep $uzytkownik | wc -l`
+
+if [ "$licz" -ge 1 ]
+    then
+      echo "Uzytkownik $uzytkownik JEST ONLINE"
+	else
+	echo "Uzytkownik $uzytkownik NIE JEST ONLINE"
+  fi
+
