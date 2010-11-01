@@ -1,12 +1,11 @@
 #!/bin/bash
-
 procek=`uname -a | cut -c71-117 | tr '_' ' '`
 pamiec_ALL=`free -g | grep Mem | cut -c16-18`
 pamiec_USED=`free -g | grep Mem | cut -c27-29`
 hdd=`df -hT | grep "10.8.0.1:/home" | cut -c29-33`
 system=`uname -a | cut -c1-28 | sed -e "s/ sigma//"`
 
-echo Procesor: $procek "
-Pamiec:$pamiec_USED /$pamiec_ALL GB
-Wolne miejsce na dysku: $hdd
-System: $system";
+echo Procesor: $procek 
+echo Pamiec:$pamiec_USED /$pamiec_ALL GB
+echo Wolne miejsce na dysku: $hdd
+echo System: $system
