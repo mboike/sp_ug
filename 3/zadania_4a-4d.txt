@@ -4,6 +4,6 @@
 
 (\d* {3,6}\d* {2,3}\d* {4,5}\d*\;)   zadanie 4c
 
-([\:\;]|8)(\W|[a-zA-Z0-9]) zadanie 4d
+([\:\;]|8)(\W|[a-zA-Z0-9]) zadanie 4d   
 
-\]?([\:\;]|8)-?(\W|[a-zA-Z0-9]) 4d nowa wersja
+\]?([\:\;]|8)-?(\W|[a-zA-Z0-9]) 4d nowa wersja z "noskiem -" i z "rogami ]"
