@@ -1,0 +1,15 @@
+echo "Ala ma kota. Kot ma Ale." | sed -e 's/./!/'
+
+Odp: Pierwszy dowolny znak zostanie zamieniony na ! 
+
+echo "Ala ma kota. Kot ma Ale." | sed -e 's/\./!/'
+
+Odp: Ponieważ znaczenie kropki zostało ukryte za pomocą slasha, czyli pierwsza kropka zostanie zamienione na wykrzyknik.
+
+echo "Ala ma kota. Kot ma Ale." | sed -e 's/./!/g'
+
+Odp: Ponieważ znaczenie kropki nie jest ukryte a na końcu jest parametr /g (global) to wszystkie dowolne znaki zostaną zamienione na wykrzykniki.
+
+echo "Ala ma kota. Kot ma Ale." | sed -e 's/\./!/g'
+
+Odp: Znaczenie kropki jest ukryte i na końcu jest parametr /g , więc wszystkie kropki w tym ciągu zostaną zamienione na wykrzykiniki.

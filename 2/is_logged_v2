@@ -2,7 +2,6 @@
 
 echo "Podaj nazwe uzytkownika"
 read uzytkownik
-#echo "Sprawdzanie czy $uzytkownik jest online"
 
 licz=`who | grep $uzytkownik | wc -l`
 
