@@ -1,5 +1,7 @@
-sed -e "s/([a-z]*)([a-zA-Z0-9\.\- \:\(\)]*)/\1/"
-
-prostrze rozwiazanie
+najprostrze rozwiazanie
 
 cut -c 1-8
+
+
+//niedziała
+// sed -e "s/([a-z]*)([a-zA-Z0-9\.\- \:\(\)]*)/\1/"
