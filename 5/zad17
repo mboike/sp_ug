@@ -1,0 +1,5 @@
+
+./genlogs.sh 2 |  sed -e "s/\([0-9\-]* [0-9\:\,]* INFO  \[SESS: [0-9]* CLIENT: [0-9]*\] \- \)\(ACTION: [a-z \:\.\-]*\)\([ ]?( account: [0-9]* )\)/\2/"
+
+
+./genlogs.sh 2 | sed -e 's/.*ACTION: //' -e 's/(.*//' -e 's/: [0-9\.]*//' | sort | uniq
