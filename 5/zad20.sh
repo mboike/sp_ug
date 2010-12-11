@@ -1,7 +1,16 @@
 #!/bin/bash
-echo "Podaj ilość użytkowników:"
+echo -n "Podaj ilosc uzytkownikow: "
 read users
 
-wynik=`./genlogs.sh $users | cut -c38-47 | sort | uniq -c | sort -r | head -1`
+function kolorek() {
+  ZIELONY="echo -en \\033[1;32m\c"
+  NORMALNY="echo -en \\033[0;39m\c"
+}
 
-echo "$wynik";
+echo "cierpliwosci.."
+
+wynik=`./genlogs.sh $users | grep "Make transfer" | sed -e 's/.* amount: //' -e 's/ (.*//' | sort -gr | head -1`
+
+kolorek
+
+echo -n "Najwyzsza kwota przelewu to:"; ${ZIELONY}; echo -n " $wynik "; ${NORMALNY};
