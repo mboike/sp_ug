@@ -1,0 +1,6 @@
+1. find ~ -type f -perm -a+w
+2. find ~ -type f -atime +7
+3. find ~ -type f -size +100k
+4. find ~ -type f -size 0c
+5. find ~ -type f -used 30 -size +512k
+
