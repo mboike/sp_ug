@@ -1,0 +1,165 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage[pdftex,linkbordercolor={0 0.9 1}]{hyperref}
+\usepackage{amsthm,amsmath,amsfonts,amssymb,mathrsfs}
+
+\newtheorem{tw}{Twierdzenie}[section]
+\newtheorem{stw}[tw]{Stwierdzenie}
+\newtheorem{fakt}[tw]{Fakt}
+\newtheorem{lemat}[tw]{Lemat}
+
+\newtheorem{df}[tw]{Definicja}
+\newtheorem{ex}[tw]{Przykład}
+\newtheorem{uw}[tw]{Uwaga}
+\newtheorem{wn}[tw]{Wniosek}
+\newtheorem{zad}{Zadanie}
+
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\textbf{\thepage}}
+\fancyhead[L]{\small\sffamily \nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Funkcje ciagłe i rózniczkowalne}
+\author{mboike}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+\tableofcontents
+
+\section{Funkcje ciagłe}
+
+\begin{df} 
+(funkcja ciagła). Niech f : (a, b) $\rightarrow$ $\R$ , oraz niech  $x_{0} \in (a, b)$. Mówimy, ze funkcja f jest ciagła w punkcie $x_{0}$ wtedy i tylko wtedy, gdy:
+\end{df}
+
+\[\forall _{\epsilon>0} \exists_{\delta>0} \in (a, b) | x-x_{0} | < \delta \Rightarrow |f(x) - f(x_{0})| < \epsilon \]
+
+
+
+\begin{ex}  Wielomiany, funkcje trygonometryczne, wykładnicze, logarytmiczne
+sa ciagłe w kazdym punkcie swojej dziedziny.
+\end{ex}
+
+\begin{ex} Funkcja f dana wzorem:
+
+\[f(x) = \left\{ \begin{array}{l} x+1 \hspace{10bp} dla \hspace{10bp} x \not= 0 \\ 0 \hspace{30bp} dla \hspace{10bp} x = 0 \end{array} \right. \]  
+\\
+Jest ciagla w kazdym punkcie poza $ x_{0} = 0 $.\\
+Niech $\Q$ oznacza zbior wszystkich liczb wymiernych.
+
+\end{ex}
+
+\begin{ex} Funkcja f dana wzorem:
+
+\[f(x) = \left\{ \begin{array}{l} 0 \hspace{10bp} dla \hspace{5bp} x \in \Q \\ 1 \hspace{10bp} dla \hspace{5bp} x 
+\notin \Q \end{array} \right. \]
+\\
+nie jest ciagla w zadnym punkcie.
+\end{ex}
+
+\begin{ex} Funkcja f dana wzorem:
+
+\[f(x) = \left\{ \begin{array}{l} 0 \hspace{10bp} dla \hspace{5bp} x \in \Q \\ x \hspace{10bp} dla \hspace{5bp} x
+\notin \Q \end{array} \right. \]
+\\
+jest ciagla w punkcie $x_{0}$ = 0, ale nie jest ciagla w pozostalych punktach dziedziny.
+\end{ex}
+
+\begin{zad}
+Udowodnij prawdziwosc podanych przykladow.
+\end{zad} 
+
+\begin{df}
+Jesli funkcja f : A $\rightarrow \R$ jest ciagla w kazdym punkcie swojej dziedziny A to mowimy krotko, ze jest 
+ciagla.
+\begin{center}
+Ponizsze twierdzenie zbiera podstawowe wlasnosci zbioru funkcji ciaglych.
+\end{center}
+\end{df}
+
+\begin{tw}
+Niech funkcje f,g: R $\rightarrow \R$ beda ciagle, oraz niech $\alpha,\beta \in \R$
+Wtedy funkcje:
+\\
+
+a) $h_{1}(x) = \alpha * f(x) + \beta * g(x),$
+
+b) $h_{2}$(x) = f(x) * g(x),
+
+c) $h_{3}(x) = \frac{f(x)}{g(x)}$ (o ile g(x) $\not=$ 0 dla dowolnego x $\in \R$ ),
+
+d) $h_{4}$(x) = f(g(x)), 
+\\
+\\
+sa ciagle.
+\\
+\\
+\indent
+Nastepne twierdzenie zwane powszechnie "wlasnoscia Darboux" lub twierdzeniem
+o wartosci posredniej ma liczne praktyczne zastosowania. Mowi ono o tym,
+ze jesli funkcja ciagla przyjmuje jakies dwie wartosci, to przy odpowiednich zalozeniach
+co do dziedziny, przyjmuje tez wszystkie wartosci posrednie. Mozemy sobie to
+latwo wyobrazic na przykladzie funkcji, ktora opisuje zmiane temperatury w czasie.
+Jesli o 7:00 bylo -1$^\circ$C, a o 9:00 bylo 2$^\circ$C, to zapewne gdzies miedzy 7:00 a 9:00 byl
+taki moment, ze temperatura wynosila dokladnie 0$^\circ$C.
+\end{tw}
+
+\begin{tw}
+Niech f: [a,b] $\rightarrow \R$ ciagla, oraz niech f(a) $\not=$ f(b). Wtedy dla dla dowolnego $y_{0} \in conv\{f(a), 
+f(b)\}$
+
+\end{tw}
+
+
+\section{Rózniczkowalnosc}
+
+\begin{df}
+Niech f:(a,b) $\to \R, x_{0} \in$ (a,b) oraz f ciagla w otoczeniu punktu $x_{0}$. Jesli istnieje granica:  
+
+\[lim_{x \to x_{0}} \frac{f(x)-f(x_{0})}{x-x_{0}}\]
+\\
+i jest skonczona, to oznaczmy ja przez f'(x$_{0}$) i nazywamy pochodna funkcji f w punkcie x$_{0}$.
+\end{df}
+
+\begin{df}
+Jesli funkcja f posiada pochodna w kazdym punkcie swojej dziedziny,
+to mowimy, ze f jest rozniczkowalna. Istnieje wtedy funkcja f', ktora kazdemu
+punktowi z dziedziny funkcji f przyporzadkowuje wartosc pochodnej pochodnej
+funkcji f w tym punkcie.
+\end{df}
+
+\begin{ex}
+Wielomiany, funkcje trygonometryczne, wykladnicze, logarytmiczne
+sa rozniczkowalne w kazdym punkcie dziedziny.
+\end{ex}
+
+\begin{ex}
+Funkcja f(x) = |x| jest ciagla, ale nie posiada pochodnej w punkcie x$_{0}$ = 0.
+\end{ex}
+
+\begin{tw}
+Niech f: [a,b] $\to \R$ ciagla i rozniczkowalna na (a,b). Dodatkowo niech f'(x) $\not=$ 0 dla x $\in$ (a,b), oraz 
+niech m=min$_{x\in[a,b]}$f(x), M=max$_{x\in[a,b]}$f(x).
+Wtedy na pewno f(a)=m, f(b)=M lub f(a)=M i f(b)=m. 
+
+\end{tw}
+
+
+
+
+\end{document}
